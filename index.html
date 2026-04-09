@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Sweep</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <p class="eyebrow">Arcade Puzzle</p>
+      <h1>Grid Sweep</h1>
+      <p class="subtitle">
+        A Minesweeper-style board with safe first clicks, three difficulties, and flag mode
+        for touch screens.
+      </p>
+    </section>
+
+    <section class="panel">
+      <div class="toolbar">
+        <label class="control">
+          <span>Difficulty</span>
+          <select id="difficulty">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="expert">Expert</option>
+          </select>
+        </label>
+
+        <button id="new-game" class="primary-button" type="button">New Game</button>
+      </div>
+
+      <div class="hud">
+        <div class="stat-card">
+          <span class="stat-label">Mines</span>
+          <strong id="mine-count">0</strong>
+        </div>
+        <button id="face-button" class="face-button" type="button" aria-label="Restart game">
+          :)
+        </button>
+        <div class="stat-card">
+          <span class="stat-label">Time</span>
+          <strong id="timer">0</strong>
+        </div>
+      </div>
+
+      <div class="mode-switch" role="group" aria-label="Touch controls">
+        <button id="reveal-mode" class="mode-button active" type="button">Reveal</button>
+        <button id="flag-mode" class="mode-button" type="button">Flag</button>
+      </div>
+
+      <p id="status" class="status" aria-live="polite">Clear every safe tile.</p>
+
+      <section class="board-wrap">
+        <div id="board" class="board" aria-label="Minesweeper board"></div>
+      </section>
+
+      <div class="instructions">
+        <p>Desktop: left click reveals, right click flags.</p>
+        <p>Touch: switch between Reveal and Flag mode above the board.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
